@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <!--Como imprimir HTML puro: 
+
+        <p v-html="linkHtml"></p>
+
+        interpreta a string passada no data: como html.
+    
+    --> 
+    <p v-once>{{ titulo }}</p>
+    <p>{{ saudacao() }}</p>
+    <a href="">Google</a>
+    <hr>
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue
+    ({
+        el: '#app',
+        data: 
+        {
+            titulo:'Usando VueJS!',
+            link: 'http://google.com.br',
+            linkHtml: '<a href="http://google.com">Google</a>'
+        },
+        methods:{
+            saudacao: function(){
+                this.titulo = 'Bom dia!!!'
+                return 'Boa semana!'
+            }
+        }
+
+    })
+
+
+</script>
